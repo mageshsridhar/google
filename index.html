@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Google Products</title>
+    <link rel="stylesheet" href="main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+    />
+  </head>
+  <body data-barba="wrapper">
+    <main data-barba="container" data-barba-namespace="home-section">
+      <div class="pagewrapper">
+        <div class="topsection animate__animated animate__fadeInDown">
+          <a href="https://mageshsridhar.myportfolio.com"
+            ><h3>My Portfolio</h3></a
+          >
+          <img
+            class="googlelogo"
+            src="Final Assets/Google Logo.png"
+            alt="Google Logo"
+          />
+          <a href="https://www.linkedin.com/in/mageshsridhar"
+            ><img
+              class="webimage"
+              src="Final Assets/Website Image.png"
+              alt="website image"
+          /></a>
+        </div>
+        <div class="contentsection animate__animated animate__fadeInLeft">
+          <h3>
+            How well you know the colors of our products? Let's find out!<br />Click
+            on a single color or make a combo.
+          </h3>
+          <div class="colorboxes">
+            <img
+              id="bluebox"
+              src="Final Assets/Rectangle 1.png"
+              alt="bluebox"
+            />
+            <img id="redbox" src="Final Assets/Rectangle 2.png" alt="redbox" />
+            <img
+              id="yellowbox"
+              src="Final Assets/Rectangle 3.png"
+              alt="yellowbox"
+            />
+            <img
+              id="greenbox"
+              src="Final Assets/Rectangle 4.png"
+              alt="greenbox"
+            />
+          </div>
+        </div>
+        <div class="google-loader">
+          <div class="dot blue"></div>
+          <div class="dot red"></div>
+          <div class="dot yellow"></div>
+          <div class="dot green"></div>
+        </div>
+        <div class="buttonsection animate__animated animate__fadeInRight">
+          <img
+            onclick="changepage()"
+            class="submitbutton"
+            src="Final Assets/Group -1.png"
+            alt="next button"
+          />
+        </div>
+        <footer class="animate__animated animate__fadeInUp">
+          <p>
+            ©2018 Google LLC All rights reserved. Google and the Google logo are
+            registered trademarks of Google LLC.
+          </p>
+        </footer>
+      </div>
+    </main>
+  </body>
+  <script>
+    var arr = [];
+    var bbox = document.getElementById("bluebox");
+    var rbox = document.getElementById("redbox");
+    var gbox = document.getElementById("greenbox");
+    var ybox = document.getElementById("yellowbox");
+    var bdot = document.getElementsByClassName("blue");
+    var rdot = document.getElementsByClassName("red");
+    var ydot = document.getElementsByClassName("yellow");
+    var gdot = document.getElementsByClassName("green");
+    bdot[0].style.backgroundColor = "grey";
+    rdot[0].style.backgroundColor = "grey";
+    ydot[0].style.backgroundColor = "grey";
+    gdot[0].style.backgroundColor = "grey";
+    bbox.addEventListener("click", cblue);
+    function cblue() {
+      if (bdot[0].style.backgroundColor == "grey") {
+        bdot[0].style.backgroundColor = "#4285f4";
+        arr[0] = 1;
+      } else {
+        bdot[0].style.backgroundColor = "grey";
+        delete arr[0];
+      }
+      console.log(arr);
+    }
+    rbox.addEventListener("click", cred);
+    function cred() {
+      if (rdot[0].style.backgroundColor == "grey") {
+        rdot[0].style.backgroundColor = "#db4437";
+        arr[1] = 2;
+      } else {
+        rdot[0].style.backgroundColor = "grey";
+        delete arr[1];
+      }
+      console.log(arr);
+    }
+    ybox.addEventListener("click", cyellow);
+    function cyellow() {
+      if (ydot[0].style.backgroundColor == "grey") {
+        ydot[0].style.backgroundColor = "#f4b400";
+        arr[2] = 3;
+      } else {
+        ydot[0].style.backgroundColor = "grey";
+        delete arr[2];
+      }
+      console.log(arr);
+    }
+    gbox.addEventListener("click", cgreen);
+    function cgreen() {
+      if (gdot[0].style.backgroundColor == "grey") {
+        gdot[0].style.backgroundColor = "#0f9d58";
+        arr[3] = 4;
+      } else {
+        gdot[0].style.backgroundColor = "grey";
+        delete arr[3];
+      }
+      console.log(arr);
+    }
+    function sum(ar) {
+      var total = 0;
+      for (var i in ar) {
+        if (Number.isInteger(ar[i])) {
+          total = total + ar[i];
+        }
+      }
+      return total;
+    }
+    function changepage() {
+      console.log(arr.length);
+      if (sum(arr) == 0) {
+        alert("Select some color combos and explore.");
+      }
+      if (sum(arr) == 1) {
+        window.location = "blueproducts.html";
+      }
+      if (sum(arr) == 2) {
+        window.location = "redproducts.html";
+      }
+      if (sum(arr) == 3 && arr[2] == 3) {
+        window.location = "yellowproducts.html";
+      }
+      if (sum(arr) == 4 && arr[3] == 4) {
+        window.location = "greenproducts.html";
+      }
+      if (sum(arr) == 10) {
+        window.location = "acproducts.html";
+      }
+      if (sum(arr) == 5 && arr[0] == 1) {
+        window.location = "bgproducts.html";
+      }
+      if (sum(arr) == 6 && arr[0] == 1) {
+        window.location = "bryproducts.html";
+      }
+      if (sum(arr) == 5 && arr[1] == 2) {
+        window.location = "ryproducts.html";
+      }
+      if (sum(arr) == 7 && arr[2] == 3) {
+        window.location = "ygproducts.html";
+      }
+      if (sum(arr) == 8) {
+        window.location = "bygproducts.html";
+      }
+      if (
+        (sum(arr) == 3 && arr[0] == 1) ||
+        (sum(arr) == 4 && arr[0] == 1) ||
+        (sum(arr) == 6 && arr[3] == 4) ||
+        (sum(arr) == 7 && arr[0] == 1) ||
+        sum(arr) == 9
+      ) {
+        alert(
+          "Products with this Color Combo doesn't exist. Please try some other color variation."
+        );
+      }
+    }
+  </script>
+</html>

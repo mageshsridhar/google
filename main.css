@@ -1,0 +1,110 @@
+:root {
+  --blue: #4285f4;
+  --red: #db4437;
+  --yellow: #f4b400;
+  --green: #0f9d58;
+
+  --size: 1rem;
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Helvetica Neue, sans-serif;
+}
+
+.pagewrapper {
+  width: 85%;
+  margin: auto;
+}
+.topsection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+}
+.webimage {
+  width: 70%;
+}
+.googlelogo {
+  width: 15%;
+}
+.contentsection {
+  text-align: center;
+}
+.contentsection h3 {
+  margin-top: 50px;
+  font-weight: 500;
+}
+.colorboxes img {
+  height: 90px;
+  width: auto;
+  margin-top: 50px;
+  margin-bottom: 80px;
+  cursor: pointer;
+}
+.google-loader {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: var(--size);
+  transform: translateY(-50%);
+  width: 15%;
+  margin: auto;
+}
+.buttonsection {
+  text-align: center;
+  margin-top: 80px;
+}
+.submitbutton {
+  width: 80px;
+  cursor: pointer;
+}
+.dot {
+  background-color: grey;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+}
+.dot {
+  animation: ani 1s ease-in-out infinite alternate forwards;
+  cursor: pointer;
+}
+
+.blue {
+  background-color: grey;
+  /*background-color: var(--blue);*/
+  animation-delay: 0.2s;
+}
+.red {
+  background-color: grey;
+  /*background-color: var(--red);*/
+  animation-delay: 0.4s;
+}
+.yellow {
+  background-color: grey;
+  /*background-color: var(--yellow);*/
+  animation-delay: 0.6s;
+}
+.green {
+  background-color: grey;
+  /*background-color: var(--green);*/
+  animation-delay: 0.8s;
+}
+
+@keyframes ani {
+  to {
+    transform: translateY(1rem);
+  }
+}
+footer {
+  left: 0;
+  bottom: 0;
+  text-align: center;
+  margin-top: 80px;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
